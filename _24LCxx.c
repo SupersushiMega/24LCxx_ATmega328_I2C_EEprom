@@ -1,3 +1,5 @@
+#include "_24LCxx.h"
+
 void TWIInit(void)
 {
 	TWSR = 0x00;
@@ -44,7 +46,7 @@ uint8_t TWIReadStatus(void)
 	return status;
 }
 
-uint8_t TWI_EEWrite8(uint8_t ID, uint16_t adress, uint8_t data)
+uint8_t TWI_EEWrite8(uint16_t adress, uint8_t data)
 {
 	uint8_t status = 0;
 	TWIStart();
@@ -82,7 +84,7 @@ uint8_t TWI_EEWrite8(uint8_t ID, uint16_t adress, uint8_t data)
 	return 0x00;
 }
 
-uint8_t TWI_EERead8(uint8_t ID, uint16_t adress, uint8_t *data)
+uint8_t TWI_EERead8(uint16_t adress, uint8_t *data)
 {
 	uint8_t status = 0;
 	TWIStart();
@@ -131,7 +133,7 @@ uint8_t TWI_EERead8(uint8_t ID, uint16_t adress, uint8_t *data)
 	return 0x00;
 }
 
-uint8_t TWI_EEWrite16(uint8_t ID, uint16_t adress, uint16_t data)
+uint8_t TWI_EEWrite16(uint16_t adress, uint16_t data)
 {
 	uint8_t status = 0;
 	TWIStart();
@@ -177,7 +179,7 @@ uint8_t TWI_EEWrite16(uint8_t ID, uint16_t adress, uint16_t data)
 	return 0x00;
 }
 
-uint8_t TWI_EERead16(uint8_t ID, uint16_t adress, uint16_t *data)
+uint8_t TWI_EERead16(uint16_t adress, uint16_t *data)
 {
 	uint8_t status = 0;
 	uint16_t output = 0;
